@@ -10,11 +10,11 @@ public class LoginTest extends BaseTest {
     @Test
     public void verifyGoogleTitle() {
 
-        System.out.println("Executing Google Title Test");
+        System.out.println("Executing Google Title Test- Master Branch ");
 
         String title = driver.getTitle();
 
-        System.out.println("Title: " + title);
+        System.out.println("pageTitle: " + title);
 
         ScreenshotUtil.takeScreenshot(driver, "GoogleTitleTest");
 
