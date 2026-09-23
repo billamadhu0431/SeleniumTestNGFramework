@@ -1,37 +1,22 @@
 package tests;
 
 import base.BaseTest;
-import utils.ScreenshotUtil;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
 
     @Test
-    public void verifyGoogleTitle() {
+    public void verifyAmazonHomePage() {
 
-        System.out.println("Executing Google Title Test- Master Branch ");
+        System.out.println("Current URL: " + driver.getCurrentUrl());
+        System.out.println("Page Title: " + driver.getTitle());
 
-        String title = driver.getTitle();
+        Assert.assertTrue(
+                driver.getCurrentUrl().contains("amazon"),
+                "Amazon page was not opened"
+        );
 
-        System.out.println("pageTitle: " + title);
-
-        ScreenshotUtil.takeScreenshot(driver, "GoogleTitleTest");
-
-        Assert.assertEquals(title, "Google");
-    }
-
-    @Test
-    public void verifyGoogleURL() {
-
-        System.out.println("Executing Google URL Test");
-
-        String url = driver.getCurrentUrl();
-
-        System.out.println("URL: " + url);
-
-        ScreenshotUtil.takeScreenshot(driver, "GoogleURLTest");
-
-        Assert.assertTrue(url.contains("google"));
+        System.out.println("Amazon page opened successfully");
     }
 }
