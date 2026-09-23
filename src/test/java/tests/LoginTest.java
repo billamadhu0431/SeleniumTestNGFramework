@@ -14,7 +14,7 @@ public class LoginTest extends BaseTest {
 
         String title = driver.getTitle();
 
-        System.out.println("Title: " + title);
+        System.out.println("pageTitle: " + title);
 
         ScreenshotUtil.takeScreenshot(driver, "GoogleTitleTest");
 
